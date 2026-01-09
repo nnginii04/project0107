@@ -1,19 +1,15 @@
 package com.example.project0107;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-@RestController
-class Project0107ApplicationTests {
-    
-}
 
-@SpringBootTest
-class Project0107ApplicationTests {
-
-    @Test
-    void contextLoads() {
+@Controller
+public class Project0107ApplicationTests {
+    @GetMapping("api/hello")
+    @ResponseBody
+    public String hello() {
+        return "Hello World!";
     }
-
 }
