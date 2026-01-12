@@ -1,12 +1,15 @@
 package com.example.project0107.memo;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
 @Getter
 @Setter
+//@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+
 public class Memo {
     private String username;
     private String content;
@@ -15,6 +18,7 @@ public class Memo {
     private Date updateAt;
 
     public void writeMemo() {
+
 
     }
 }
