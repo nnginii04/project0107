@@ -1,33 +1,62 @@
 package com.example.project0107.calculator;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
+
     @Test
     @DisplayName("더하기 테스트")
-    void test1() {
+    void plus() {
         Calculator calculator = new Calculator();
         Double result = calculator.opperate(8, "+", 2);
-        System.out.println("result = " + result);
-
-        Assertions.assertEquals(10,  result);
-
+        assertEquals(10.0, result, 1e-9);
     }
-}
 
-class CalculaorTest2 {
+    @Test
+    @DisplayName("빼기 테스트")
+    void minus() {
+        Calculator calculator = new Calculator();
+        Double result = calculator.opperate(8, "-", 2);
+        assertEquals(6.0, result, 1e-9);
+    }
+
+    @Test
+    @DisplayName("곱하기 테스트")
+    void multiply() {
+        Calculator calculator = new Calculator();
+        Double result = calculator.opperate(8, "*", 2);
+        assertEquals(16.0, result, 1e-9);
+    }
+
     @Test
     @DisplayName("나누기 테스트")
-    void test2() {
+    void divide() {
         Calculator calculator = new Calculator();
         Double result = calculator.opperate(8, "/", 2);
-        System.out.println("result = " + result);
+        assertEquals(4.0, result, 1e-9);
+    }
 
-        Assertions.assertEquals(4,  result);
+    @Test
+    @DisplayName("0으로 나누기 테스트: null 반환")
+    void divideByZeroReturnsNull() {
+        Calculator calculator = new Calculator();
+        Double result = calculator.opperate(8.0, "/", 0.0);
+        assertNull(result);
+    }
+
+    @Test
+    @DisplayName("잘못된 연산자 입력 테스트: IllegalArgumentException 발생")
+    void invalidOperatorThrows() {
+        Calculator calculator = new Calculator();
+
+        IllegalArgumentException e = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.opperate(8, "%", 2)
+        );
+
+        assertEquals("잘못된 연산자를 입력하셨습니다", e.getMessage());
     }
 }
