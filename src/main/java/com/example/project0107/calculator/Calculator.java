@@ -1,6 +1,13 @@
 package com.example.project0107.calculator;
 
 public class Calculator {
+    /**
+     * 계산기 4칙 연산 함수
+     * @param num1 : 입력값 1
+     * @param op : 연산자
+     * @param num2 : 입력값 2
+     * @return : result
+     */
     public Double opperate(double num1, String op, double num2) {
         switch (op) {
             case "*":

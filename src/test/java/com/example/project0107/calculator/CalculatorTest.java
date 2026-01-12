@@ -19,7 +19,7 @@ class CalculatorTest {
     }
 }
 
-class Calcula기orTest2 {
+class CalculaorTest2 {
     @Test
     @DisplayName("나누기 테스트")
     void test2() {
