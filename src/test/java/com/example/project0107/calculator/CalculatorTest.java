@@ -57,6 +57,6 @@ class CalculatorTest {
                 () -> calculator.opperate(8, "%", 2)
         );
 
-        assertEquals("잘못된 연산자를 입력하셨습니다", e.getMessage());
+        assertEquals("Invalid operation", e.getMessage());
     }
 }
